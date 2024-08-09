@@ -1,5 +1,4 @@
-package utils;
-
+package com.parent_package.utils;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
@@ -10,7 +9,7 @@ public class BrowserFactory {
 
     public Page openBrowser(String Browser) throws Exception {
         Playwright playwright=Playwright.create();
-        com.microsoft.playwright.Browser browser;
+        Browser browser;
         Page page;
         switch (Browser){
             case "chrome":
@@ -25,8 +24,7 @@ public class BrowserFactory {
             default:
                 throw new Exception("Browser Type did not match::"+Browser);
         }
-        page= browser.newPage();
-        return page;
+         page= browser.newPage();
+         return page;
     }
 }
-
